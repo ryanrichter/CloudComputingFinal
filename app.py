@@ -48,6 +48,18 @@ def hello():
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
 
+@app.route("/table", methods=['GET'])
+def table():
+    return send_from_directory(os.path.join(app.root_path, 'static'), "table.html")
+
+@app.route("/js/<path>", methods=['GET'])
+def js(path):
+    return send_from_directory(os.path.join(os.path.join(app.root_path, 'static'), 'js'), path, mimetype='text/javascript')
+
+@app.route("/css/<path>", methods=['GET'])
+def css(path):
+    return send_from_directory(os.path.join(os.path.join(app.root_path, 'static'), 'css'), path, mimetype='text/css')
+
 @app.route('/data/HSHD/<HSHD_NUM>', methods=['GET'])
 def data(HSHD_NUM):
     return jsonify(
