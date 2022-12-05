@@ -8,8 +8,19 @@
    <body>
      <main>
         <div class="px-4 py-3 my-2 text-center">
-            <h1 class="display-6 fw-bold">Test Data Page</h1>
-            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg px-4 gap-3">Back home</a>
+            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/age-range.png') }}" alt="age-range" width="1000" height="249"/>
+            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/household-size.png') }}" alt="household-size" width="1000" height="500"/>
+            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/income.png') }}" alt="income" width="1000" height="600"/>
+            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/marital-status.png') }}" alt="marital-status" width="1000" height="600"/>
+            <p class="fs-5">
+                From the graphs above and other independent data analysis, we believe the demographic factors that most impact customer engagement
+                is household income and age. As customers began to climb in income, they made less purchases. This could be because this organization
+                is targeting a low-income demographic, among other things. Age impacted customer engagement in a sort of bell pattern, with engagement
+                peaking at the 45-55 range and decreasing on either end of that age range. We found that factors such as marital status and household 
+                size did not have as much of an impact as the other demographic factors.
+            </p>
+            <a href="{{ url_for('table') }}" class="btn btn-primary btn-lg px-4 gap-3">View Data</a>
+            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg px-4 gap-3">Back Home</a>
           </div>
      </main>      
    </body>
